@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:#242424;
+    --secondary-color:#2A2A2A;
+    --color1:#03A9F4;
+    --color2:#3A464E;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.products{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+}
+.products .product-item{
+    background-color: var(--main-color);
+    text-align: center;
+    padding: 20px 0;
+    transition: transform 0.3s;
+}
+.products .product-item:hover{
+    transform: scale(1.2);
+    background-color: var(--color1);
+    color: white;
+    z-index: 10;
+}
+.products .product-item:hover ul li{
+    color: white;
+}
+.products .product-item h3{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.products .product-item .price{
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.products .product-item .price::before{
+    content: "$";
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    margin-right: 30px;
+}
+.products .product-item .price::after{
+    content: "/mo";
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    right: -35px;
+    margin-left: 30px;
+}
+.products .product-item ul li{
+    padding: 30px 0;
+    color: var(--color2);
+    border-top: 1px solid var(--color2);
+}
+.products .product-item ul li:last-child{
+    border-bottom: 1px solid var(--color2);
+    margin-bottom: 30px;
+}
+.products .product-item ul li:first-child{
+    margin-top: 30px;
+}
+button{
+    color: rgb(224, 223, 223);
+    border: 0;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 30px;
+    border:1px solid rgb(224, 223, 223);
+    margin-bottom: 20px;
+    cursor: pointer;
+}
